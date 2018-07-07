@@ -1,0 +1,31 @@
+<html>
+<head>
+	
+</head>
+<body>
+	<table>
+		<a href="{%url 'book'%}">Add New Entry</a>
+		<thead>
+			<td>Book Name</td>
+			<td>ISBN Number</td>
+			<td>Price</td>
+			<td>Author</td>
+			<td>Options</td>
+
+		</thead>
+		<tbody>
+				{% for f in form%}
+			<tr>
+			
+				<td>{{f.book_name}}</td>
+				<td>{{f.isbn_number}}</td>
+				<td>{{f.price}}</td>
+				<td>{{f.author}}</td>
+				<td><a href="{%url 'edit' f.id%}">Edit </a><a href="{%url 'delete' f.id%}">Delete</a></td>
+				
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
